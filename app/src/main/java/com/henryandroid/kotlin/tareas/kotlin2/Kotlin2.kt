@@ -1,5 +1,7 @@
 package com.henryandroid.kotlin.tareas.kotlin2
 
+import java.io.ObjectInputValidation
+
 class Kotlin2 {
     
     // 1. Declaración y uso de funciones básicas
@@ -55,6 +57,24 @@ class Kotlin2 {
         }
     }
 
+    // Consignas de HW1
+    // Creá una función que tenga parámetros opcionales.
+
+    fun entry(a: Int, name: String = "Invitado") {
+        println("Hola $name, tu edad es $a")
+    }
+
+    // Consignas de HW2
+    //Creá una función de orden superior que reciba otra función como parámetro.
+
+    fun reserveIfAllowed(age: Int, validation: (Int) -> Boolean) {
+        if (validation(age)) {
+            println("Acceso permitido")
+        } else {
+            println("Acceso denegado")
+        }
+    }
+
     fun main() {
         // Llamar a las funciones de prueba
         greet("Gaston")
@@ -65,10 +85,25 @@ class Kotlin2 {
 
         // Creación de objetos y uso de clases
         val person = Person("Juan", 30)
+        val person2 = Person("Roxana", 38)
+
         // TODO: Llamar al método que imprime la información de la persona
         person.presentation()
+        person2.presentation()
 
         val car = Car("Toyota", "Corolla", 2022)
+        entry(25)
+        entry(25, "Pamela")
+        reserveIfAllowed(25) { it >= 18 }
+        reserveIfAllowed(17) { it >= 18 }
+
+        val animal = Animal("Perro", "Lola")
+        animal.name
+        animal.makeSound()
+
+        val animal2 = Animal("Gato", "Luna", "miau")
+        animal2.name
+        animal2.makeSound()
     }
 }
 
