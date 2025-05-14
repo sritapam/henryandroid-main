@@ -46,7 +46,9 @@ class Kotlin3 {
 
     fun main() {
         // Herencia y polimorfismo
+        val animal = Animal("Animalito")
         val dog = Dog("Firulais")
+        animal.makeSound()
         dog.makeSound()
 
         // Colecciones
