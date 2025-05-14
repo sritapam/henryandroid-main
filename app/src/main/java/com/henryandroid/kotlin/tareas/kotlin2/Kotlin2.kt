@@ -17,8 +17,9 @@ class Kotlin2 {
 
     // 2. Funciones inline y de una sola expresión
     inline fun multiply(a: Int, b: Int) = a * b
-    
-    //fun square(n: Int) = n * n // TODO: Convertir esta función a una expresión de una sola línea
+
+    //al usar el inline se ahorra memoria, eficiencia de manejo de memoria y procesamiento
+    //fun square(n: Int, jojo:(String) -> Unit) = n * n // TODO: Convertir esta función a una expresión de una sola línea
 
     val square: (Int) -> Int = { n -> n * n }
     val square2: (Int) -> Int = { it * it }

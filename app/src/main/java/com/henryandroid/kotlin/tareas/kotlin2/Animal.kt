@@ -16,7 +16,9 @@ class Animal (
 ) {
     private var sound: String = "desconocido"
 
-    constructor(species: String, name: String, sound: String) : this(species, name){
+    constructor(species: String,
+                name: String,
+                sound: String) : this(species, name){
         this.sound = sound
     }
 
